@@ -8,6 +8,7 @@ gem 'rails', '4.0.3'
 # needed for Heroku
 # https://devcenter.heroku.com/articles/ruby-support#injected-plugins
 gem 'rails_serve_static_assets'
+gem 'rails_12factor'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

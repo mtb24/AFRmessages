@@ -28,6 +28,8 @@ GEM
     arel (4.0.2)
     atomic (1.1.15)
     bson (1.9.2)
+    bson_ext (1.9.2)
+      bson (~> 1.9.2)
     builder (3.1.4)
     capybara (2.2.1)
       mime-types (>= 1.16)
@@ -154,6 +156,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext
   cucumber-rails
   database_cleaner
   jbuilder (~> 1.2)

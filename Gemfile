@@ -44,6 +44,7 @@ end
 
 # MongoDB
 gem 'mongo'
+gem 'bson_ext'
 gem 'mongoid'
 
 group :test do

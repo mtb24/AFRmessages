@@ -1,8 +1,13 @@
 source 'https://rubygems.org'
 
+ruby '2.1.1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
+# needed for Heroku
+# https://devcenter.heroku.com/articles/ruby-support#injected-plugins
+gem 'rails_serve_static_assets'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

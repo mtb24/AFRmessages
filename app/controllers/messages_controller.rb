@@ -1,13 +1,13 @@
 class MessagesController < ApplicationController
-=begin
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+
+  #before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   # GET /messages
   # GET /messages.json
   def index
     #@messages = Message.all
   end
-
+=begin
   # GET /messages/1
   # GET /messages/1.json
   def show

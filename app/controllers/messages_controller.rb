@@ -1,10 +1,11 @@
 class MessagesController < ApplicationController
+=begin
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    #@messages = Message.all
   end
 
   # GET /messages/1
@@ -71,4 +72,5 @@ class MessagesController < ApplicationController
     def message_params
       params.require(:message).permit(:phone_number)
     end
+=end
 end

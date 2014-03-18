@@ -15,14 +15,15 @@ class MessagesController < ApplicationController
     users = User.all
     message = Message.all
 
-    account_sid = "ACxxxxxxxxxxxxxxxxxxxxxxxx"
-    auth_token = "yyyyyyyyyyyyyyyyyyyyyyyyy"
-    client = Twilio::REST::Client.new account_sid, auth_token
+    account_sid = ENV['TWILIO_SID']
+    auth_token = ENV['TWILIO_AUTH_TOKEN']
 
-    from = "+14159998888" # Your Twilio number
+    @client = Twilio::REST::Client.new account_sid, auth_token
+
+    from = "+14158771771" # Your Twilio number
 
     users.each do |number|
-      client.account.messages.create(
+      @client.account.messages.create(
         :from => from,
         :to => number,
         :body => message

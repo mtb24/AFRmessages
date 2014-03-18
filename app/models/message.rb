@@ -1,4 +1,6 @@
 class Message
   include Mongoid::Document
-  field phone_number type:String
+  field from type:String
+  field time type:Integer
+  field message type:String
 end

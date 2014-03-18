@@ -7,48 +7,27 @@ class MessagesController < ApplicationController
   def index
     #@messages = Message.all
   end
+
 =begin
-  # GET /messages/1
-  # GET /messages/1.json
-  def show
-  end
-
-  # GET /messages/new
-  def new
-    @message = Message.new
-  end
-
-  # GET /messages/1/edit
-  def edit
-  end
-
   # POST /messages
   # POST /messages.json
-  def create
-    @message = Message.new(message_params)
+  def send
+    users = User.all
+    message = Message.all
 
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @message }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+    account_sid = "ACxxxxxxxxxxxxxxxxxxxxxxxx"
+    auth_token = "yyyyyyyyyyyyyyyyyyyyyyyyy"
+    client = Twilio::REST::Client.new account_sid, auth_token
 
-  # PATCH/PUT /messages/1
-  # PATCH/PUT /messages/1.json
-  def update
-    respond_to do |format|
-      if @message.update(message_params)
-        format.html { redirect_to @message, notice: 'Message was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
+    from = "+14159998888" # Your Twilio number
+
+    users.each do |number|
+      client.account.messages.create(
+        :from => from,
+        :to => number,
+        :body => message
+      )
+      puts "Sent message to #{number}"
     end
   end
 

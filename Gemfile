@@ -53,6 +53,9 @@ gem 'mongo'
 gem 'bson_ext'
 gem 'mongoid'
 
+# Twilio
+gem 'twilio-ruby'
+
 group :test do
   gem 'rspec-rails'
 end

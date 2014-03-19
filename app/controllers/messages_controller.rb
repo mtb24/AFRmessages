@@ -6,9 +6,9 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     #@messages = Message.all
+    puts "Hello from AFR messages"
   end
 
-=begin
   # POST /messages
   # POST /messages.json
   def send
@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
 
     @client = Twilio::REST::Client.new account_sid, auth_token
 
-    from = "+14158771771" # Your Twilio number
+    from = ENV['TWILIO_NUMBER']
 
     users.each do |number|
       @client.account.messages.create(
@@ -52,5 +52,4 @@ class MessagesController < ApplicationController
     def message_params
       params.require(:message).permit(:phone_number)
     end
-=end
 end

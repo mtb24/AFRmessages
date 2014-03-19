@@ -13,7 +13,7 @@ development:
       options:
         # Change whether the session persists in safe mode by default.
         # (default: false)
-        # safe: false
+         safe: true
 
         # Change the default consistency model to :eventual or :strong.
         # :eventual will send reads to secondaries, :strong sends everything
@@ -59,7 +59,7 @@ development:
 
     # Skip the database version check, used when connecting to a db without
     # admin access. (default: false)
-    # skip_version_check: false
+     skip_version_check: true
 
     # User Active Support's time zone in conversions. (default: true)
     # use_activesupport_time_zone: true
@@ -81,7 +81,7 @@ production:
       options:
         # Change whether the session persists in safe mode by default.
         # (default: false)
-        # safe: false
+         safe: true
 
         # Change the default consistency model to :eventual or :strong.
         # :eventual will send reads to secondaries, :strong sends everything
@@ -127,7 +127,7 @@ production:
 
     # Skip the database version check, used when connecting to a db without
     # admin access. (default: false)
-    # skip_version_check: false
+     skip_version_check: true
 
     # User Active Support's time zone in conversions. (default: true)
     # use_activesupport_time_zone: true

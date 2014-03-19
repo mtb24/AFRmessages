@@ -50,8 +50,7 @@ end
 
 # MongoDB
 gem 'mongo'
-gem 'bson_ext'
-gem 'mongoid'
+gem 'mongoid', '~> 4.0.0.beta1', github: 'mongoid/mongoid'
 
 # Twilio
 gem 'twilio-ruby'

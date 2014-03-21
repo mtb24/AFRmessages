@@ -24,17 +24,13 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    puts "I am HERE -> #{params['Body']}"
     users = User.all
     message = Message.new(body: params['Body'], from: params['From'])
-
-    puts "message body: #{message.body}"
 
     account_sid = ENV['TWILIO_SID']
     auth_token = ENV['TWILIO_AUTH_TOKEN']
 
     client = Twilio::REST::Client.new account_sid, auth_token
-    puts "client: #{client}"
 
     from = ENV['TWILIO_NUMBER']
 
@@ -44,15 +40,14 @@ class MessagesController < ApplicationController
         :to => user.phone_number,
         :body => message.body
       )
-      puts "Sent message to #{user.phone_number}"
     end
 
     respond_to do |format|
       if message.save
-        format.html { redirect_to message, notice: 'Message was successfully created.' }
-        format.json { render action: 'show', status: :created, location: message }
+        #format.html { redirect_to message, notice: 'Message was successfully created.' }
+        #format.json { render action: 'show', status: :created, location: message }
       else
-        format.html { render action: 'new' }
+        #format.html { render action: 'new' }
         format.json { render json: message.errors, status: :unprocessable_entity }
       end
     end

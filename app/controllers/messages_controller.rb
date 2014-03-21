@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     users = User.all
-    @message = Message.new(message_params)
+    message = Message.new(message_params)
 
     account_sid = ENV['TWILIO_SID']
     auth_token = ENV['TWILIO_AUTH_TOKEN']
@@ -34,22 +34,22 @@ class MessagesController < ApplicationController
 
     from = ENV['TWILIO_NUMBER']
 
-    users.each do |user, @message|
+    users.each do |user, message|
       client.account.messages.create(
         :from => from,
         :to => user.phone_number,
-        :body => @message.body
+        :body => message.body
       )
       puts "Sent message to #{user.phone_number}"
     end
 
     respond_to do |format|
-      if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @message }
+      if message.save
+        format.html { redirect_to message, notice: 'Message was successfully created.' }
+        format.json { render action: 'show', status: :created, location: message }
       else
         format.html { render action: 'new' }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
+        format.json { render json: message.errors, status: :unprocessable_entity }
       end
     end
   end

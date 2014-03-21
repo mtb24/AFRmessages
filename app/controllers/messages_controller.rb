@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    puts "I am HERE -> #{params}"
+    puts "I am HERE -> #{params['Body']} #{params[:Body]}"
     users = User.all
     message = Message.new(body: params['Body'], from: params['From'])
 

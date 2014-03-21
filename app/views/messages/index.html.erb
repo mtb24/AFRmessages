@@ -3,7 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Phone number</th>
+      <th>Body</th>
+      <th>From</th>
       <th></th>
       <th></th>
       <th></th>
@@ -13,7 +14,8 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr>
-        <td><%= message.phone_number %></td>
+        <td><%= message.body %></td>
+        <td><%= message.from %></td>
         <td><%= link_to 'Show', message %></td>
         <td><%= link_to 'Edit', edit_message_path(message) %></td>
         <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>

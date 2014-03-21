@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Afrmessages::Application.config.secret_key_base = '798f6fde33744641af79f9a208953d9ce989c79d5e35b7c277e9d28c376b87718173e6bee5972eb7615e7db655338d5974eae8b75de49ed2c2435a2c3c030fd5'
+Afrmessages::Application.config.secret_key_base = '0577ae064bc240d1722a7f5715575b6fb324df38150ce28720bbf4af48334b7f24747767970c1620b7619573bedb83ba942e6b2611e18698a4f67d8004803c99'

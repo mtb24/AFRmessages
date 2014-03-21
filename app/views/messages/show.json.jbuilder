@@ -1,1 +1,1 @@
-json.extract! @message, :id, :phone_number, :created_at, :updated_at
+json.extract! @message, :id, :body, :from, :created_at, :updated_at

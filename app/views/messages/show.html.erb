@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Phone number:</strong>
-  <%= @message.phone_number %>
+  <strong>Body:</strong>
+  <%= @message.body %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @message.from %>
 </p>
 
 <%= link_to 'Edit', edit_message_path(@message) %> |

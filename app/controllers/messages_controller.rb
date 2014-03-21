@@ -24,11 +24,11 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    puts "I am HERE -> #{params['Body']} #{params[:Body]}"
+    puts "I am HERE -> #{params['Body']}"
     users = User.all
     message = Message.new(body: params['Body'], from: params['From'])
 
-    puts "message: #{message}"
+    puts "message body: #{message.body}"
 
     account_sid = ENV['TWILIO_SID']
     auth_token = ENV['TWILIO_AUTH_TOKEN']
@@ -38,7 +38,7 @@ class MessagesController < ApplicationController
 
     from = ENV['TWILIO_NUMBER']
 
-    users.each do |user, message|
+    users.each do |user|
       client.account.messages.create(
         :from => from,
         :to => user.phone_number,

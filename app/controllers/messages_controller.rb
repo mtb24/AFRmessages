@@ -25,12 +25,15 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     users = User.all
-    message = Message.new(message_params)
+    message = Message.new(body: params['Body'], from: params['From'])
+
+    puts "message: #{message}"
 
     account_sid = ENV['TWILIO_SID']
     auth_token = ENV['TWILIO_AUTH_TOKEN']
 
     client = Twilio::REST::Client.new account_sid, auth_token
+    puts "client: #{client}"
 
     from = ENV['TWILIO_NUMBER']
 

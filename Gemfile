@@ -6,14 +6,13 @@ ruby '2.1.1'
 gem 'rails', '4.0.4'
 
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
+gem 'sqlite3', group: [:development, :test]
 gem 'pg'
 
 # needed for Heroku
 # https://devcenter.heroku.com/articles/ruby-support#injected-plugins
 gem 'rails_serve_static_assets'
 gem 'rails_12factor'
-gem 'unicorn'
 
 # Twilio
 gem 'twilio-ruby'
@@ -48,7 +47,7 @@ end
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development

@@ -13,10 +13,6 @@
  *= require_tree .
  */
 
-/*.cover-container{
-	margin-left: auto;
-	margin-right: auto;
-}*/
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../assets/glyphicons-halflings-regular.eot');
@@ -63,6 +59,15 @@
 	margin-right: auto;
 	margin-left: auto;
 }
-body {
+.inner {
 	text-align: center;
+}
+.actions {
+	margin: 15px;
+}
+.lead {
+	margin: 20px;
+}
+.footer-notice {
+	margin-top: 50px;
 }

@@ -13,6 +13,7 @@ gem 'pg'
 # https://devcenter.heroku.com/articles/ruby-support#injected-plugins
 gem 'rails_serve_static_assets'
 gem 'rails_12factor'
+gem 'newrelic_rpm'
 
 # Twilio
 gem 'twilio-ruby'

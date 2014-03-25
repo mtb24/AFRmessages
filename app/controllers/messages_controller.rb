@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    sender = params['From'] ~= /\A[+][1]/ ? params['From'].sub(/\+1/, '') : params['From']
+    sender = params['From'] =~ /\A[+][1]/ ? params['From'].sub(/\+1/, '') : params['From']
     users = User.where.not(phone_number: sender)
     message = Message.new(body: params['Body'], from: params['From'])
 

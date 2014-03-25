@@ -84,3 +84,11 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 	color: red;
 	font-size: 36px;
 }
+#error_explanation {
+	text-align: left;
+	color: red;
+}
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+}

@@ -28,6 +28,21 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+
+        account_sid = ENV['TWILIO_SID']
+        auth_token = ENV['TWILIO_AUTH_TOKEN']
+
+        client = Twilio::REST::Client.new account_sid, auth_token
+
+        from = ENV['TWILIO_NUMBER']
+        body = "You've been added to the AFR SMS system. Messages sent to: #{from} will be broadcast to the group. Please save this number!"
+
+        client.account.messages.create(
+          :from => from,
+          :to => @user.phone_number,
+          :body => body
+        )
+
         format.html { redirect_to @user, notice: 'Your number has been added!' }
         format.json { render action: 'show', status: :created, location: @user }
       else

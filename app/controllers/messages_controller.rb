@@ -21,8 +21,8 @@ class MessagesController < ApplicationController
   def edit
   end
 
-  # POST /messages
-  # POST /messages.json
+  # GET /broadcast
+  # GET /broadcast.json
   def create
     sender = params['From'] =~ /\A[+][1]/ ? params['From'].sub(/\+1/, '') : params['From']
     users = User.where.not(phone_number: sender)
@@ -30,10 +30,10 @@ class MessagesController < ApplicationController
 
     account_sid = ENV['TWILIO_SID']
     auth_token = ENV['TWILIO_AUTH_TOKEN']
+    from = ENV['TWILIO_NUMBER']
 
     client = Twilio::REST::Client.new account_sid, auth_token
 
-    from = ENV['TWILIO_NUMBER']
 
     users.each do |user|
       client.account.messages.create(

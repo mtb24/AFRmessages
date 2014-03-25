@@ -40,7 +40,6 @@ class MessagesController < ApplicationController
         :to => user.phone_number,
         :body => message.body
       )
-      puts user
     end
 
     respond_to do |format|

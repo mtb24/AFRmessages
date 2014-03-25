@@ -37,7 +37,7 @@ class MessagesController < ApplicationController
 
     users.each do |user|
       client.account.messages.create(
-        :from => "AFR",
+        :from => from,
         :to => user.phone_number,
         :body => message.body
       )

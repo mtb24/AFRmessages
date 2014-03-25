@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron">
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @user.phone_number %>
-</p>
+	<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+	<h1 class="main-number"> <%= ENV['TWILIO_NUMBER'] %> </h1>
+
+	<p>This is the number to use for sending messages to the AFR system. SAVE IT!!!</p>
+
+</div>

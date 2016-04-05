@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  http_basic_authenticate_with :name => "test", :password => "test", :except => [:new, :create]
+  http_basic_authenticate_with :name => "test", :password => "test", :except => [:index, :new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users

@@ -11,7 +11,8 @@ class ApplicationController < ActionController::Base
   private
   def authenticate
   	login = authenticate_or_request_with_http_basic do |username, password|
-  		username == APP_CONFIG['username'] && Digest::SHA1.hexdigest(password) == APP_CONFIG['password']
+  		#username == APP_CONFIG['username'] && Digest::SHA1.hexdigest(password) == APP_CONFIG['password']
+  		username == "afradmin" && password == "notthisy3ar"
   	end
   	session[:login] = login
   end

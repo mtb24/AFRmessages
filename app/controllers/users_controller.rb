@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  #http_basic_authenticate_with :name => "test", :password => "test", :except => [:index, :new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate, :except => [:index]
 
   # GET /users
   # GET /users.json

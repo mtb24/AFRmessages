@@ -30,7 +30,8 @@ class MessagesController < ApplicationController
 
     account_sid = ENV['TWILIO_SID']
     auth_token = ENV['TWILIO_AUTH_TOKEN']
-    from = ENV['TWILIO_NUMBER']
+    #from = ENV['TWILIO_NUMBER']
+    from = ENV['APP_NAME']
 
     client = Twilio::REST::Client.new account_sid, auth_token
 

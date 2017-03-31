@@ -35,8 +35,8 @@ class UsersController < ApplicationController
 
         client = Twilio::REST::Client.new account_sid, auth_token
 
-        #from = ENV['TWILIO_NUMBER']
-        from = ENV['APP_NAME']
+        from = ENV['TWILIO_NUMBER']
+        #from = ENV['APP_NAME']
         body = "You've been added to the AFR SMS system. Messages sent to: #{from} will be broadcast to the group. Please save this number!"
 
         client.account.messages.create(
